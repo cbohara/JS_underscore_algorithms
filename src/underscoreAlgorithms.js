@@ -5,115 +5,143 @@ window.prep = {};
 
 
 prep.largestNumber = function(arr){
-  var largest = 0;
-  _.each(arr, function(val){
-    if (largest < val){
-      largest = val;
-    }
-  });
+  /*
+  largestNumber takes an array of number and returns the largest number in it.
 
-  return largest;
+  var nums = [1, 21, 471, 470, 39, 10, 92];
+  var largestNum = largestNumber(nums);
+  console.log(largestNum) // 471
+
+  */
 };
 
-console.log(prep.largestNumber([23, 48, 177, 41, 481]));
 
-prep.largestString = function(str){
-  var largest = '';
-  _.each(str.split(' '), function(val){
-    if (largest < val){
-      largest = val;
-    }
-  });
+prep.largestString = function(sentence){
+  /*
+  largestString takes a sentence and returns the largest word in it.
 
-  return largest;
+  use _.each to solve largestString.
+
+  var bigWord = largestString('I love california too much');
+  console.log(bigWord) // california
+
+  */
 };
-
-console.log(prep.largestString("Hey what's up"));
 
 prep.stringReversal = function(str){
-  var newStr = [];
-  var lastIndex = str.length;
-  _.each(str.split(''), function(letter){
-    newStr[lastIndex] = letter;
-    lastIndex--
-  });
-  return newStr.join('');
+  /*
+  stringReversal takes a string and returns it in reverse.
+
+  use _.each to complete stringReversal.  
+
+
+  var olleh = stringReversal('hello');
+  console.log(olleh) // 'olleh';
+
+  */
 };
 
-console.log(prep.stringReversal('hello'));
-// olleh
 
 prep.isPalindrome = function(str){
-  var reversedString = prep.stringReversal(str);
-  return str === reversedString;
-};
+  /*
 
-console.log(prep.isPalindrome('hello'));
-// false
-console.log(prep.isPalindrome('hannah'));
-// true
+  isPalindrome takes a string and returns whether it's a palindrome or not.
+
+  A palindrome is a word that is spelled the exact same way forward than it is backward.
+
+  use _.each OR a function that utilizes each ;) to solve isPalindrome.
+
+
+  var truePalindrome = isPalindrome('hannah');
+  var falsePalindrome = isPalindrome('hello');
+
+  */
+};
 
 prep.countVowels = function(str){
- 
+  
+  /*
+  countVowels takes an string and returns the number of vowels in the string.
+
+  use _.each to complete countVowels
+
+  var numberOfVowels = countVowels('hey whats up');
+
+  console.log(numberOfVowels);
+  */
+
 };
 
-console.log(prep.countVowels("Hey what's up"));
-// 3
 
 prep.multBy = function(arr, num){
-  return _.map(arr, function(val){
-    return val * num;
-  });
-};
+  /*
+  multBy takes an array, and a number and multiplies each value in the array by the input number.
 
-console.log(prep.multBy([1, 2, 3, 4, 5], 5));
-// [5, 10, 15, 20, 25]
+  use _.map to complete multBy.
+
+  example:
+  var nums = [1, 2, 3, 4, 5];
+  var newArray = prep.multBy(nums, 3); 
+  console.log(newArray) // [3, 6, 9, 12, 15];
+  
+  */
+};
 
 prep.squareBy = function(arr, num){
-  return _.map(arr, function(val){
-    return Math.pow(num, val);
-  });
+  /*
+  squareBy takes an array, and a number and squares each value in the array by the input number.
+
+  use _.map to complete squareBy.
+
+  example:
+  var nums = [1, 2, 3, 4, 5];
+  var newArray = prep.squareBy(nums, 3); 
+  console.log(newArray) // [1, 8, 27, 256, 3125];
+  */
+
 };
-
-console.log(prep.squareBy([1, 2, 3, 4, 5], 5));
-// [5, 25, 125, 625, 3125]
-
 
 prep.capitalizeFirstLetters = function(str){
-  return _.map(str.split(' '), function(word){
-    var firstLetter = word[0].toUpperCase();
-    return firstLetter + word.slice(1);
-  }).join(' ');
+  /*
+
+  capitalizeFirstLetters takes a string and returns the same string with all of the first letters capitalized.
+
+  use _.map OR _.reduce to complete capitalizeFirstLetters
+
+  var string = 'hey how are you?';
+
+  var newString = capitalizeFirstLetters(string)
+  console.log(newString) // 'Hey How Are You?';
+
+  */
+
 };
-
-console.log(prep.capitalizeFirstLetters("Hey what's up"));
-// Hey What's Up
-
 
 prep.collectType = function(arr, type){
-  return _.filter(arr, function(val){
-    if(typeof val === type){
-      return val;
-    }
-  });
-};
+  /*
+  collectType takes an array of mixed values and a type and returns a new array containing the values of the specified type. Look up the _.filter method on underscore.js and use it to solve collectType
 
-console.log(prep.collectType([1, 'hey', "what's", 'yo', 10], "number"));
-// ["hey", "what's", "yo"];
-console.log(prep.collectType([1, 'hey', "what's", 'yo', 10], "string"));
-// [1, 10];
+
+  var numsArray = collectType([1, 2, 'hey', true, undefined], 'number')
+
+  console.log(numsArray) // [1, 2];
+  */
+
+};
 
 
 prep.findMean = function(arr){
-  var sum = _.reduce(arr, function(start, val){
-    return start + val;
-  },0)
+ /*
+  
+  findMean takes an array of numbers and returns the mean of all of the numbers.
 
-  return sum / arr.length;
+  look up _.reduce and use it to solve findMean.
+
+  var meanOfNums = prep.findMean([1, 4, 10, 9]);
+  console.log(meanOfNums) // 6;
+ */
 };
 
-console.log(prep.findMean([1, 4, 10, 9]));
-// 6
 
 
 

@@ -20,3 +20,9 @@ The file `src/underscoreAlgorithms.js` contains function definitions and explana
 - [ ] collectType
 - [ ] findMean
 
+
+#### EXTRA:
+- [ ] largestNumber (refactored with reduce)
+- [ ] largestString (refactored with reduce)
+- [ ] countVowels   (refactored with reduce)
+
