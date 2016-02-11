@@ -54,15 +54,7 @@ console.log(prep.isPalindrome('hannah'));
 // true
 
 prep.countVowels = function(str){
-  var letterCache = {'a': true, 'e': true, 'i': true, 'o': true, 'u': true};
-  return _.reduce(str, function(x, letter){
-    console.log(x);
-    if (letterCache[letter]){
-      return x+=1;
-    } else {
-      return x;
-    }
-  }, 0);
+ 
 };
 
 console.log(prep.countVowels("Hey what's up"));
