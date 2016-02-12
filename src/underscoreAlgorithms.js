@@ -4,42 +4,61 @@
 window.prep = {};
 
 
+// var nums = [1, 21, 471, 470, 39, 10, 92];
+
+//largestNumber takes an array of numbers and returns the largest number in it 
 prep.largestNumber = function(arr){
-  /*
-  largestNumber takes an array of numbers and returns the largest number in it.
-
-  var nums = [1, 21, 471, 470, 39, 10, 92];
-  var largestNum = largestNumber(nums);
-  console.log(largestNum) // 471
-
-  */
+  // create variable to test against our array values
+  var test = 0;
+  // loop through the array and replace the test value with the element if the element is greater than the test value
+  _.each(arr, function (element) {
+    if(element > test){
+      test = element;
+    }
+  });
+  // return greatest value
+  return test;
 };
 
+// var test = prep.largestNumber(nums);
+// console.log('test',test);
 
+// largestString takes a sentence and returns the largest word in it
 prep.largestString = function(sentence){
-  /*
-  largestString takes a sentence and returns the largest word in it.
-
-  use _.each to solve largestString.
-
-  var bigWord = largestString('I love california too much');
-  console.log(bigWord) // california
-
-  */
+  // split the sentence into individual words
+  var words = sentence.split(" ");
+  // create an empty string to compare against the words in the sentence
+  var test = "";
+  // loop through the sentence and replace the test value with the element if the element is greater than the test value
+  _.each(words, function (element) {
+    // compare the test word length against the element from input sentence
+    if(element.length > test.length){
+      test = element;
+    }
+  });
+  // return longest word
+  return test;
 };
 
-prep.stringReversal = function(str){
-  /*
-  stringReversal takes a string and returns it in reverse.
+// var bigWord = prep.largestString('I love california too much');
+// console.log('test',bigWord); 
+  // california
 
-  use _.each to complete stringReversal.  
-
-
-  var olleh = stringReversal('hello');
-  console.log(olleh) // 'olleh';
-
-  */
+// stringReversal takes a string and returns it in reverse
+prep.stringReversal = function(word){
+  // split the word into individual characters
+  var characters = word.split("");
+  // create string to place replacement word
+  var newWord = [];
+  // shift each character into the empty string
+  _.each(characters, function (element){
+    newWord.shift(characters);
+  });
 };
+
+var olleh = prep.stringReversal('hello');
+console.log(olleh); 
+  // 'olleh'
 
 
 prep.isPalindrome = function(str){
