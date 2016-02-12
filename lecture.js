@@ -108,7 +108,7 @@ function AnimalMaker(name) {
 
 var animalNames = ['Frog', 'Falcon', 'Fox'];
 
-// maps will throughcollection, mutates each value, and RETURNS 
+// maps will throughcollection, mutatesf each value, and RETURNS 
 var farm = _.map(animalNames, function (name) {
   return AnimalMaker(name);
 });
@@ -119,4 +119,43 @@ var farm = _.map(animalNames, function (name) {
 _.each(farm, function (animal) {
   animal.speak();
 });
+
+// ============ HOW REDUCE WORKS =======================
+// reduces all values in an object into one end value
+var nums = [1, 2, 3, 4, 5];
+
+var add = function(val1, val2){
+	return val1 + val2;
+};
+
+reduceNums = function(arr, callback){
+	var start = 0;
+	// reassign start to the return value of the calback 
+	loopThrough(arr, function(val){
+		start = callback(val, start);
+	});
+	return start;
+};
+
+reduceNums(nums, add);
+/*
+1 + 2 = 3
+3 + 3 = 6
+6 + 4 = 10
+10 + 5 = 15
+*/
+
+// ===== USE REDUCE WITH A STRING =============
+
+_.reduce = function(collection, callback, start){
+	_.each(collection, function(val){
+		start = callback(val, start);
+	});
+};
+
+_.reduce(['I', 'Love', 'Programming'], function(val, start){
+	return start + ' ' + val;
+});
+
+
 
