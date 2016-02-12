@@ -6,7 +6,7 @@ window.prep = {};
 
 prep.largestNumber = function(arr){
   /*
-  largestNumber takes an array of number and returns the largest number in it.
+  largestNumber takes an array of numbers and returns the largest number in it.
 
   var nums = [1, 21, 471, 470, 39, 10, 92];
   var largestNum = largestNumber(nums);
@@ -67,7 +67,7 @@ prep.countVowels = function(str){
 
   var numberOfVowels = countVowels('hey whats up');
 
-  console.log(numberOfVowels);
+  console.log(numberOfVowels); // 3
   */
 
 };
