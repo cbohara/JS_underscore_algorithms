@@ -149,17 +149,23 @@ var newArray = prep.squareBy(nums, 3);
 // console.log(newArray); 
 // [1, 8, 27, 256, 3125]
 
-// ========NEED HELP ON CAPITALIZE FIRST LETTERS==========
+
+function toTitleCase(element)
+{
+  return element.charAt(0).toUpperCase() + element.substr(1).toLowerCase();
+};
+
 // capitalizeFirstLetters takes a string and returns the same string with all of the first letters capitalized. use _.map OR _.reduce
 prep.capitalizeFirstLetters = function(str){
   // split the sentence into individual words
   var words = str.split(" ");
-   // empty array to hold result
+   // empty array to hold result of _.map 
   var newArray = [];
   // _.map applies a function on each value of a collection and returns the results in a new array
-  _.map(words, function(element){
-    element.charAt(0).toUpperCase();
-  });
+  newArray = _.map(words, toTitleCase);
+  // transform array of words into a single string and save it into the result variable
+  var result = newArray.join(' ');
+  return result;
 };
 
 
