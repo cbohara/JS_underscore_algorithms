@@ -187,19 +187,18 @@ var numsArray = prep.collectType([1, 2, 'hey', true, undefined], 'number')
 // console.log(numsArray);
 // [1, 2]
 
-
-
-// ==========NEED HELP WITH FIND MEAN ==========
-
 // findMean takes an array of numbers and returns the mean of all of the numbers
 prep.findMean = function(arr){
-  var sum;
   // reduce will sum up the values in the array
-  _.reduce(arr, function(memo, num){sum = memo + num;}, 0); 
-  console.log(sum);
+  var sum = _.reduce(arr, function(lastReducedValue, item){
+    return lastReducedValue + item;
+  });
+  var mean = sum / arr.length;
+  return mean;
 };
+
 var meanOfNums = prep.findMean([1, 4, 10, 9]);
-console.log(meanOfNums); 
+// console.log(meanOfNums); 
 // 6
 
 }());
